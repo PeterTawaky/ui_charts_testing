@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:ui_charts_testing/main.dart';
 import 'package:ui_charts_testing/model/chart_data_model.dart';
-import 'package:ui_charts_testing/model/line_theme_model.dart';
+import 'package:ui_charts_testing/model/visualize_various_data_model.dart';
 import 'package:ui_charts_testing/widgets/spline_chart_widget.dart';
 
 class ColumnChartWidget extends StatelessWidget {
-  final ChartThemeModel chartThemeModel;
+  final VisualizeVariousDataModel chartThemeModel;
 
   // final List<ChartDataModel> data;
   // final String xAxisTitle;

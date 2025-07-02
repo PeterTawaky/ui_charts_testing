@@ -1,13 +1,11 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:ui_charts_testing/main.dart';
 import 'package:ui_charts_testing/model/chart_data_model.dart';
-import 'package:ui_charts_testing/model/line_theme_model.dart';
+import 'package:ui_charts_testing/model/visualize_various_data_model.dart';
 
 class SplineChartWidget extends StatelessWidget {
-  final ChartThemeModel chartThemeModel;
+  final VisualizeVariousDataModel chartThemeModel;
 
   const SplineChartWidget({super.key, required this.chartThemeModel});
   @override
@@ -45,7 +43,7 @@ class SplineChartWidget extends StatelessWidget {
 }
 
 SplineSeries<ChartDataModel, String> getSplineSeries(
-  ChartThemeModel chartThemeModel,
+  VisualizeVariousDataModel chartThemeModel,
   List<ChartDataModel> chartData,
 ) => SplineSeries<ChartDataModel, String>(
   dataSource: chartData,
@@ -96,7 +94,7 @@ SplineSeries<ChartDataModel, String> getSplineSeries(
   animationDuration: 5000,
 );
 LineSeries<ChartDataModel, String> getLineSeries(
-  ChartThemeModel chartThemeModel,
+  VisualizeVariousDataModel chartThemeModel,
   List<ChartDataModel> chartData,
 ) => LineSeries<ChartDataModel, String>(
   dataSource: chartData,
@@ -147,7 +145,7 @@ LineSeries<ChartDataModel, String> getLineSeries(
   animationDuration: 5000,
 );
 ColumnSeries<ChartDataModel, String> getColumnSeries(
-  ChartThemeModel chartThemeModel,
+  VisualizeVariousDataModel chartThemeModel,
   List<ChartDataModel> chartData,
   Color graphColor,
 ) => ColumnSeries<ChartDataModel, String>(

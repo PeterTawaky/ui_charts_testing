@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-import 'package:ui_charts_testing/model/chart_data_model.dart';
 
-class ChartThemeModel {
+class VisualizeVariousDataModel {
   final String? horizontalAxisTitle;
   final String? graphName;
   final TextStyle? markerValueTextStyle;
@@ -15,7 +14,7 @@ class ChartThemeModel {
   final NumericAxis? secondaryAxisDetails;
   final Color markerColor;
   final Color? graphColor;
-  const ChartThemeModel({
+  const VisualizeVariousDataModel({
     // required this.chartData,
     this.graphColor,
     this.markerColor = Colors.black,

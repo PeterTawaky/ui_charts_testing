@@ -2,26 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:ui_charts_testing/main.dart';
 import 'package:ui_charts_testing/model/chart_data_model.dart';
-import 'package:ui_charts_testing/model/line_theme_model.dart';
+import 'package:ui_charts_testing/model/visualize_various_data_model.dart';
 import 'package:ui_charts_testing/widgets/spline_chart_widget.dart';
 
 class LineChartWidget extends StatelessWidget {
-  final ChartThemeModel chartThemeModel;
+  final VisualizeVariousDataModel chartThemeModel;
   const LineChartWidget({super.key, required this.chartThemeModel});
-  // final List<ChartData> chartData = [
-  //   ChartData('Jan', 35),
-  //   ChartData('Feb', 28),
-  //   ChartData('Mar', 38),
-  //   ChartData('Apr', 32),
-  //   ChartData('May', 40),
-  //   ChartData('Jun', 32),
-  //   ChartData('Jul', 35),
-  //   ChartData('Aug', 55),
-  //   ChartData('Sep', 38),
-  //   ChartData('Oct', 30),
-  //   ChartData('Nov', 25),
-  //   ChartData('Dec', 32),
-  // ];
 
   @override
   Widget build(BuildContext context) {

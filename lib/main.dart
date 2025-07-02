@@ -1,11 +1,11 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:ui_charts_testing/model/visualize_various_data_model.dart';
 import 'package:ui_charts_testing/widgets/column_chart_widget.dart';
 import 'package:ui_charts_testing/widgets/doughnut_chart_widget.dart';
 import 'package:ui_charts_testing/widgets/line_chart_widget.dart';
 import 'package:ui_charts_testing/model/chart_data_model.dart';
-import 'package:ui_charts_testing/model/line_theme_model.dart';
 import 'package:ui_charts_testing/widgets/pie_chart.dart';
 import 'package:ui_charts_testing/widgets/radial_bar_chart.dart';
 import 'package:ui_charts_testing/widgets/spline_chart_widget.dart';
@@ -31,10 +31,12 @@ class MyApp extends StatelessWidget {
             SizedBox(
               height: 200,
               width: 200,
-              child: ColumnChartWidget(chartThemeModel: ChartThemeModel()),
+              child: ColumnChartWidget(
+                chartThemeModel: VisualizeVariousDataModel(),
+              ),
             ),
-            LineChartWidget(chartThemeModel: ChartThemeModel()),
-            SplineChartWidget(chartThemeModel: ChartThemeModel()),
+            LineChartWidget(chartThemeModel: VisualizeVariousDataModel()),
+            SplineChartWidget(chartThemeModel: VisualizeVariousDataModel()),
             DoughnutChartWidget(),
             PieChartWidget(),
             RadialBarChartWidget(),
