@@ -91,11 +91,12 @@ class PieChartWidget extends StatelessWidget {
 
           // Selection behavior
           selectionBehavior: SelectionBehavior(
-            enable: true,
-            selectedColor: Colors.grey[400],
-            unselectedColor: Colors.grey[300],
-            selectedBorderColor: Colors.black,
-            selectedBorderWidth: 2,
+           enable: true,
+            selectedBorderColor: Colors.white,
+            selectedBorderWidth: 5,
+            unselectedOpacity: 0.4,
+            selectedOpacity: 1.0,
+            toggleSelection: true,
           ),
 
           // Stroke styling

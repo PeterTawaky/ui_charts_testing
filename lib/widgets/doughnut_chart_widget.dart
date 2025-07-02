@@ -15,17 +15,17 @@ class DoughnutChartWidget extends StatelessWidget {
     return SfCircularChart(
       // Chart title
       title: ChartTitle(text: 'Device Usage Statistics'),
-      
+
       // Legend
       legend: Legend(
         isVisible: true,
         position: LegendPosition.bottom,
         overflowMode: LegendItemOverflowMode.wrap,
       ),
-      
+
       // Tooltip behavior
       tooltipBehavior: TooltipBehavior(enable: true),
-      
+
       // Chart series
       series: <CircularSeries<ChartData, String>>[
         DoughnutSeries<ChartData, String>(
@@ -34,79 +34,85 @@ class DoughnutChartWidget extends StatelessWidget {
           yValueMapper: (ChartData data, _) => data.value,
           pointColorMapper: (ChartData data, _) => data.color,
           name: 'Usage',
-          
+
           // Doughnut customization
           innerRadius: '60%',
           radius: '80%',
           explode: true,
           explodeIndex: 0,
           explodeOffset: '10%',
-          
+
           // Data labels
           dataLabelSettings: DataLabelSettings(
             isVisible: true,
             labelPosition: ChartDataLabelPosition.outside,
             useSeriesColor: true,
-            textStyle: TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.bold,
-            ),
+            textStyle: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
             connectorLineSettings: ConnectorLineSettings(
               type: ConnectorType.curve,
               length: '25%',
             ),
-            builder: (dynamic data, dynamic point, dynamic series, 
-                     int pointIndex, int seriesIndex) {
-              return Container(
-                padding: EdgeInsets.all(6),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(4),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.3),
-                      spreadRadius: 1,
-                      blurRadius: 3,
-                      offset: Offset(0, 2),
+            builder:
+                (
+                  dynamic data,
+                  dynamic point,
+                  dynamic series,
+                  int pointIndex,
+                  int seriesIndex,
+                ) {
+                  return Container(
+                    padding: EdgeInsets.all(6),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(4),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.3),
+                          spreadRadius: 1,
+                          blurRadius: 3,
+                          offset: Offset(0, 2),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      '${data.category}',
-                      style: TextStyle(
-                        fontSize: 10,
-                        fontWeight: FontWeight.bold,
-                        color: data.color,
-                      ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          '${data.category}',
+                          style: TextStyle(
+                            fontSize: 10,
+                            fontWeight: FontWeight.bold,
+                            color: data.color,
+                          ),
+                        ),
+                        Text(
+                          '${data.value}%',
+                          style: TextStyle(
+                            fontSize: 9,
+                            color: Colors.grey[600],
+                          ),
+                        ),
+                      ],
                     ),
-                    Text(
-                      '${data.value}%',
-                      style: TextStyle(
-                        fontSize: 9,
-                        color: Colors.grey[600],
-                      ),
-                    ),
-                  ],
-                ),
-              );
-            },
+                  );
+                },
           ),
-          
+
           // Selection behavior
           selectionBehavior: SelectionBehavior(
             enable: true,
-            selectedColor: Colors.grey[300],
-            unselectedColor: Colors.grey[400],
+            selectedBorderColor: Colors.white,
+            selectedBorderWidth: 5,
+            unselectedOpacity: 0.4,
+            selectedOpacity: 1.0,
+            toggleSelection: true,
           ),
-          
+
           // Animation
           animationDuration: 1500,
         ),
       ],
-      
+
       // Center text (optional)
       annotations: <CircularChartAnnotation>[
         CircularChartAnnotation(

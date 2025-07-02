@@ -107,8 +107,11 @@ class RadialBarChartWidget extends StatelessWidget {
           // Selection behavior
           selectionBehavior: SelectionBehavior(
             enable: true,
-            selectedColor: Colors.grey[400],
-            unselectedColor: Colors.grey[300],
+            selectedBorderColor: Colors.white,
+            selectedBorderWidth: 1,
+            unselectedOpacity: 0.4,
+            selectedOpacity: 1.0,
+            toggleSelection: true,
           ),
 
           // Animation

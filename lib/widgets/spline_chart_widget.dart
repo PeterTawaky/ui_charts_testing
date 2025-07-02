@@ -30,6 +30,8 @@ class SplineChartWidget extends StatelessWidget {
           // getSplineSeries(chartThemeModel, getRandomValue()),
           getSplineSeries(chartThemeModel, getRandomValue()),
           getSplineSeries(chartThemeModel, getRandomValue()),
+          getSplineSeries(chartThemeModel, getRandomValue()),
+          getSplineSeries(chartThemeModel, getRandomValue()),
         ],
         zoomPanBehavior: ZoomPanBehavior(
           enablePinching: true,
